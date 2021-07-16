@@ -3,6 +3,11 @@ Makes a Gold Batch Print Job from a list of IDs
 
 Edit .config file to add db name, username, and pass
 
+Program uses a new line to indicate a new number, so just paste directly from
+excel/golden/toad/whatever.  No comma separation.  Header row can be included,
+since a result for that id won't be found in gold.
+
+Notes:
 CWU uses padded ID numbers ('0' + cwu ID), remove 0 from code if you don't.
 For the 'new cards only' option, it is looking at if:
   A card with the provided media type (050 for CWU) exists
