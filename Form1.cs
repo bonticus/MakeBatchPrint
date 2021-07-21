@@ -18,6 +18,7 @@ namespace MakePrintBatch
         {
             string mediaType = ConfigurationManager.AppSettings["mediatype"];  //change this to your media type value you're checking against
             string idPadding = ConfigurationManager.AppSettings["idpadding"];    //id padding, we pad with a 0, use "" if you don't pad.
+            string cardStock = ConfigurationManager.AppSettings["cardstock"];
 
             string lines = txtIDs.Text.ToString();
 
@@ -37,7 +38,7 @@ namespace MakePrintBatch
                 {
                     //create new batch
                     String dateTimeStamp = DateTime.Now.ToString("MMddyyy");
-                    sql = "INSERT INTO batchprintjobs (JOBID,JOBDESCRIPTION,JOBSTATUS,CARDSTOCKTYPE,CREATEDBY,PRINTTYPE) VALUES (" + jobID + ",'" + txtBatchName.Text.ToString() + "-" + dateTimeStamp + "','I','CWU Mifare','mortonb',0)";
+                    sql = "INSERT INTO batchprintjobs (JOBID,JOBDESCRIPTION,JOBSTATUS,CARDSTOCKTYPE,CREATEDBY,PRINTTYPE) VALUES (" + jobID + ",'" + txtBatchName.Text.ToString() + "-" + dateTimeStamp + "','I','" + cardStock + "','mortonb',0)";
                     Console.WriteLine(sql);
                     OraQuery(sql);
 
