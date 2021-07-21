@@ -16,8 +16,8 @@ namespace MakePrintBatch
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            string mediaType = "050";  //change this to your media type value you're checking against
-            string idPadding = "0";    //id padding, we pad with a 0, use "" if you don't pad.
+            string mediaType = ConfigurationManager.AppSettings["mediatype"];  //change this to your media type value you're checking against
+            string idPadding = ConfigurationManager.AppSettings["idpadding"];    //id padding, we pad with a 0, use "" if you don't pad.
 
             string lines = txtIDs.Text.ToString();
 
